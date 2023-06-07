@@ -97,7 +97,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "build:gh-pages": "cross-env PUBLIC_URL=/ckeditor5-react-sample node scripts/build.js",
-    "publish:gh-pages": "git checkout --orphan gh-pages && git --work-tree build add --all && git --work-tree build commit -m 'gh-pages' && git push origin HEAD:gh-pages --force && git checkout -f master",
+    "publish:gh-pages": "git --work-tree build add --all && git --work-tree build commit -m 'gh-pages' && git push origin HEAD:gh-pages --force && git checkout -f master",
     "test": "node scripts/test.js"
   },
   "eslintConfig": {
