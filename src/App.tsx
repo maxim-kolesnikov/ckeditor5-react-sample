@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { CKEditor } from '@ckeditor/ckeditor5-react';
+import CakeSvg from './icons/cake.svg';
 
 // NOTE: Use the editor from source (not a build)!
 import { ClassicEditor } from '@ckeditor/ckeditor5-editor-classic';
@@ -28,6 +29,7 @@ import { SpecialCharacters, SpecialCharactersEssentials } from '@ckeditor/ckedit
 import { MediaEmbed, AutoMediaEmbed } from '@ckeditor/ckeditor5-media-embed';
 
 import { MentionCustomization, mentionConfig } from './MentionCustomization';
+import {ExtraButtonsPlugin} from "./plugins/extra-buttons";
 
 const heading: HeadingConfig = {
   options: [
@@ -75,6 +77,14 @@ const heading: HeadingConfig = {
   ]
 }
 
+
+const editorExtraButtons = [{
+  id: 'extra-btn-id-1',
+  label: 'extra-btn',
+  icon: CakeSvg,
+  onClick: () => console.log('extra-btn-clicked'),
+}]
+
 const editorConfiguration = {
   plugins: [
     Alignment,
@@ -102,8 +112,13 @@ const editorConfiguration = {
     '|', 'bulletedList', 'numberedList', 'todolist', 'outdent', 'indent', 'undo', 'redo',
     '|', 'fontColor', 'fontBackgroundColor', 'highlight',
     '|', 'alignment',
-    '|', 'link', 'blockQuote', 'codeBlock', 'insertTable', 'specialCharacters', 'mediaEmbed'
+    '|', 'link', 'blockQuote', 'codeBlock', 'insertTable', 'specialCharacters', 'mediaEmbed',
+    '|', ...editorExtraButtons.map((button) => button.id),
   ],
+  extraPlugins: [ExtraButtonsPlugin],
+  extraButtons: {
+    items: editorExtraButtons,
+  },
   mention: mentionConfig,
   simpleUpload: {
     uploadUrl: 'http://example.com', // https://ckeditor.com/docs/ckeditor5/latest/features/images/image-upload/image-upload.html
@@ -127,7 +142,7 @@ const editorConfiguration = {
   // }
 };
 
-const defaultData = `<h1>Hello from CKEditor 5!</h1><h1>Заголовок 1</h1><h2>Заголовок 2</h2><h3>Заголовок 3</h3><h4>Заголовок 4</h4><h5>Заголовок 5</h5><h6>Заголовок 6</h6><p>Параграф с обычным текстом,<br><span style="color:hsl(270,75%,60%);">который</span> <span style="background-color:hsl(0,0%,60%);">можно</span> <mark class="marker-yellow">переносить</mark><br>на новую строку</p><p>Текст с кодом: <code>const baz = 'foo'</code></p><p><strong>Жирный текст </strong><i><strong>Курсивный и жирный текст </strong>Курсивный текст </i><s>Зачеркнутый</s> <u>Подчеркнутый текст</u></p><pre><code class="language-javascript">const customMentionRenderer = (item) =&gt; {
+const defaultData = `<h1>Hello from CKEditor 5@39.0.1!</h1><h1>Заголовок 1</h1><h2>Заголовок 2</h2><h3>Заголовок 3</h3><h4>Заголовок 4</h4><h5>Заголовок 5</h5><h6>Заголовок 6</h6><p>Параграф с обычным текстом,<br><span style="color:hsl(270,75%,60%);">который</span> <span style="background-color:hsl(0,0%,60%);">можно</span> <mark class="marker-yellow">переносить</mark><br>на новую строку</p><p>Текст с кодом: <code>const baz = 'foo'</code></p><p><strong>Жирный текст </strong><i><strong>Курсивный и жирный текст </strong>Курсивный текст </i><s>Зачеркнутый</s> <u>Подчеркнутый текст</u></p><pre><code class="language-javascript">const customMentionRenderer = (item) =&gt; {
     const itemElement = document.createElement( 'span' );
 
     itemElement.classList.add( 'custom-item' );

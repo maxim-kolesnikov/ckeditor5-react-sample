@@ -44,15 +44,24 @@ declare module '*.webp' {
     export default src;
 }
 
+// declare module '*.svg' {
+//   import * as React from 'react';
+//
+//   export const ReactComponent: React.FunctionComponent<React.SVGProps<
+//     SVGSVGElement
+//   > & { title?: string }>;
+//
+//   const src: string;
+//   export default src;
+// }
+
+type SvgrComponent = React.FC<React.SVGProps<SVGSVGElement>>;
+
 declare module '*.svg' {
-  import * as React from 'react';
+  import type React from 'react';
 
-  export const ReactComponent: React.FunctionComponent<React.SVGProps<
-    SVGSVGElement
-  > & { title?: string }>;
-
-  const src: string;
-  export default src;
+  const content: React.FC<React.SVGProps<SVGSVGElement>>;
+  export default content;
 }
 
 declare module '*.module.css' {

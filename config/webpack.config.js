@@ -56,6 +56,7 @@ const imageInlineSizeLimit = parseInt(
   process.env.IMAGE_INLINE_SIZE_LIMIT || '10000'
 );
 
+
 // Check if TypeScript is setup
 const useTypeScript = fs.existsSync(paths.appTsConfig);
 
@@ -340,6 +341,23 @@ module.exports = function (webpackEnv) {
     module: {
       strictExportPresence: true,
       rules: [
+        {
+          test: /\.(png|jpg|gif|svg)$/,
+          loader: 'file-loader',
+          exclude: [
+            /node_modules/,
+            /.(js|mjs|jsx|ts|tsx)$/,
+            /.html$/,
+            /.json$/,
+            /ckeditor5-[^/\\]+[/\\]theme[/\\]icons[/\\][^/\\]+\.svg$/,
+            /ckeditor5-[^/\\]+[/\\]theme[/\\].+\.css$/,
+            /.svg$/
+          ],
+          options: {
+            name: 'assets/images/[name].[ext]',
+          },
+        },
+
         // Handle node_modules packages that contain sourcemaps
         shouldUseSourceMap && {
           enforce: 'pre',
@@ -353,7 +371,8 @@ module.exports = function (webpackEnv) {
           // back to the "file" loader at the end of the loader list.
           oneOf: [
             {
-              test: /ckeditor5-[^/\\]+[/\\]theme[/\\]icons[/\\][^/\\]+\.svg$/,
+              // test: /ckeditor5-[^/\\]+[/\\]theme[/\\]icons[/\\][^/\\]+\.svg$/,
+              test: /\.svg$/,
               use: [ 'raw-loader' ]
             },
             {
