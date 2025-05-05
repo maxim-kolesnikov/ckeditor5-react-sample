@@ -86,6 +86,7 @@ const editorExtraButtons = [{
 }]
 
 const editorConfiguration = {
+  licenseKey: 'GPL',
   plugins: [
     Alignment,
     CloudServices,
@@ -142,7 +143,7 @@ const editorConfiguration = {
   // }
 };
 
-const defaultData = `<h1>Hello from CKEditor 5@39.0.1!</h1><h1>Заголовок 1</h1><h2>Заголовок 2</h2><h3>Заголовок 3</h3><h4>Заголовок 4</h4><h5>Заголовок 5</h5><h6>Заголовок 6</h6><p>Параграф с обычным текстом,<br><span style="color:hsl(270,75%,60%);">который</span> <span style="background-color:hsl(0,0%,60%);">можно</span> <mark class="marker-yellow">переносить</mark><br>на новую строку</p><p>Текст с кодом: <code>const baz = 'foo'</code></p><p><strong>Жирный текст </strong><i><strong>Курсивный и жирный текст </strong>Курсивный текст </i><s>Зачеркнутый</s> <u>Подчеркнутый текст</u></p><pre><code class="language-javascript">const customMentionRenderer = (item) =&gt; {
+const defaultData = `<h1>Hello from CKEditor 5@45.0.0!</h1><h1>Заголовок 1</h1><h2>Заголовок 2</h2><h3>Заголовок 3</h3><h4>Заголовок 4</h4><h5>Заголовок 5</h5><h6>Заголовок 6</h6><p>Параграф с обычным текстом,<br><span style="color:hsl(270,75%,60%);">который</span> <span style="background-color:hsl(0,0%,60%);">можно</span> <mark class="marker-yellow">переносить</mark><br>на новую строку</p><p>Текст с кодом: <code>const baz = 'foo'</code></p><p><strong>Жирный текст </strong><i><strong>Курсивный и жирный текст </strong>Курсивный текст </i><s>Зачеркнутый</s> <u>Подчеркнутый текст</u></p><pre><code class="language-javascript">const customMentionRenderer = (item) =&gt; {
     const itemElement = document.createElement( 'span' );
 
     itemElement.classList.add( 'custom-item' );
