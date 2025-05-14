@@ -21,7 +21,7 @@ const config = function () {
       port: 3000,
     },
     output: {
-      path: path.resolve(fs.realpathSync(process.cwd()), "dist"),
+      path: path.resolve(fs.realpathSync(process.cwd()), "build"),
       filename: "[name].js",
       chunkFilename: "[name].[contenthash].js",
       clean: true,
