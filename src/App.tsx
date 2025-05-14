@@ -29,7 +29,7 @@ import { SpecialCharacters, SpecialCharactersEssentials } from '@ckeditor/ckedit
 import { MediaEmbed, AutoMediaEmbed } from '@ckeditor/ckeditor5-media-embed';
 
 import { MentionCustomization, mentionConfig } from './MentionCustomization';
-import {ExtraButtonsPlugin} from "./plugins/extra-buttons";
+import { ExtraButtonsPlugin } from "./plugins/extra-buttons";
 
 const heading: HeadingConfig = {
   options: [

@@ -177,7 +177,7 @@ module.exports = function (webpackEnv) {
             root: paths.appSrc,
           },
         },
-        {
+         {
           loader: require.resolve(preProcessor),
           options: {
             sourceMap: true,

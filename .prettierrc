@@ -1,0 +1,13 @@
+{
+  "singleQuote": true,
+  "printWidth": 110,
+  "tabWidth": 2,
+  "useTabs": false,
+  "arrowParens": "always",
+  "overrides": [
+    {
+      "files": "*.svg",
+      "options": { "parser": "html" }
+    }
+  ]
+}
