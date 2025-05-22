@@ -140,6 +140,12 @@
     ],
     "resetMocks": true
   },
+  "exports": {
+    "./translations/ru.js": {
+      "import": "./dist/translations/ru.js",
+      "require": "./dist/translations/ru.js"
+    }
+  },
   "babel": {
     "presets": [
       "react-app"

@@ -31,6 +31,9 @@ import { MediaEmbed, AutoMediaEmbed } from '@ckeditor/ckeditor5-media-embed';
 import { MentionCustomization, mentionConfig } from './MentionCustomization';
 import { ExtraButtonsPlugin } from "./plugins/extra-buttons";
 
+import RuTranslations from "ckeditor5/translations/ru.js"
+
+
 const heading: HeadingConfig = {
   options: [
     {
@@ -86,7 +89,9 @@ const editorExtraButtons = [{
 }]
 
 const editorConfiguration = {
+  language: 'ru',
   licenseKey: 'GPL',
+  translations: [RuTranslations],
   plugins: [
     Alignment,
     CloudServices,

@@ -4,7 +4,6 @@ const ReactRefreshPlugin = require('@rspack/plugin-react-refresh');
 const { styles } = require('@ckeditor/ckeditor5-dev-utils');
 const fs = require('fs');
 
-
 const isProduction = process.env.NODE_ENV === 'production';
 /** @type {import('@rspack/cli').Configuration} */
 const config = function () {
@@ -14,7 +13,7 @@ const config = function () {
     entry: { main: './src/index.tsx' },
     devtool: 'source-map',
     resolve: {
-      extensions: ['...', '.ts', '.tsx', '.jsx'],
+      extensions: ['...', '.ts', '.tsx', '.jsx', '.js'],
     },
     devServer: {
       host: 'localhost',

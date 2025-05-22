@@ -20,6 +20,11 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
+  "paths": {
+    "ckeditor5/translations/ru.js": [
+      "node_modules/ckeditor5/dist/translations/ru.js"
+    ]
+  },
   "include": [
     "src"
   ]
